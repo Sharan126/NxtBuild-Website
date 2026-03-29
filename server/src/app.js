@@ -5,7 +5,9 @@ import { errorHandler, notFoundHandler } from './middleware/error.middleware.js'
 
 const app = express();
 
-app.use(cors({ origin: process.env.CLIENT_URL || 'http://localhost:5173' }));
+app.use(cors({
+  origin: ['https://nxtbuildwebsite.vercel.app', 'http://localhost:5173']
+}));
 app.use(express.json({ limit: '10mb' }));
 
 app.use('/api', routes);
