@@ -1,7 +1,7 @@
 import axios from 'axios';
 import Cookies from 'js-cookie';
 
-const BASE_URL = (import.meta.env.VITE_API_URL || 'https://nxtbuild-two.vercel.app')
+const BASE_URL = (import.meta.env.VITE_API_URL || 'https://nxtbuild-two.vercel.app') + '/api';
 const getHeaders = () => {
   const token = Cookies.get('token');
   return token ? { Authorization: `Bearer ${token}` } : {};
